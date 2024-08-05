@@ -1,0 +1,11 @@
+//base
+@import 'base/reset';
+@import 'base/utilityes';
+@import 'base/vars';
+//components
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/_dice.scss';
+//layouts
+@import 'layouts/index';
+@import 'layouts/signin';

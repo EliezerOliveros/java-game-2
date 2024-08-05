@@ -1,127 +1,113 @@
 function iniciaArena() {
-    const nombreJugador = prompt("¡Bienvenido Gladiador! Ingresa tu nombre:");
-  
-    if (!nombreJugador) {
-        console.log("No ingresaste un nombre válido. Refresca la página para intentarlo de nuevo.");
-        return;
-    }
-  
-    console.log(`Hola Gladiador, ${nombreJugador}! Vamos a la Arena.`);
-  
-    class Arma {
-        constructor(nombre, descripcion, ganaContra, pierdeContra) {
-          this.nombre = nombre;
-          this.descripcion = descripcion;
-          this.ganaContra = ganaContra;
-          this.pierdeContra = pierdeContra;
-        }
-      
-        esGanadoraContra(otraArma) {
-          return this.ganaContra.includes(otraArma.nombre);
-        }
-      
-        esPerdedoraContra(otraArma) {
-          return this.pierdeContra.includes(otraArma.nombre);
-        }
-    }
-      
-    const espada = new Arma(
-        "La espada",
-        "Un arma versátil que le puede ganar fácilmente a las lanzas y dagas, pero contra las hachas y mazas no te irá tan bien.",
-        ["La daga", "La lanza"],
-        ["El hacha", "El mazo"]
-    );
-      
-    const hacha = new Arma(
-        "El hacha",
-        "Un arma con un gran filo frontal, la cual le ganará a las espadas y a las lanzas, pero muy lenta contra dagas y sin defensa contra los mazos.",
-        ["La espada", "La lanza"],
-        ["La daga", "El mazo"]
-    );
-      
-    const mazo = new Arma(
-        "El mazo",
-        "Un arma pesada capaz de destruir la armadura de tus enemigos, fuerte contra las espadas y las hachas, pero muy lenta contra las dagas y con un corto alcance contra las lanzas.",
-        ["La espada", "El hacha"],
-        ["La daga", "La lanza"]
-    );
-      
-    const lanza = new Arma(
-        "La lanza",
-        "Un arma con una punta filosa y un gran alcance, perfecta para pelear contra las pequeñas dagas y los lentos mazos, pero no tan rápida contra las versátiles espadas y sin equilibrio contra las hachas.",
-        ["La daga", "El mazo"],
-        ["La espada", "El hacha"]
-    );
-      
-    const daga = new Arma(
-        "La daga",
-        "Un arma rápida y versátil, muy eficiente contra las hachas y los lentos mazos, pero no puede contra el alcance de las lanzas y las espadas.",
-        ["El hacha", "El mazo"],
-        ["La espada", "La lanza"]
-    );
-      
+
     const armas = [espada, hacha, mazo, lanza, daga];
-      
+
+    renderizarArmas(armas);
+
     function obtenerArmaAleatoria() {
         const indiceAleatorio = Math.floor(Math.random() * armas.length);
         return armas[indiceAleatorio];
     }
-      
+
+    let armaJugadorSeleccionada = null;
+    let rondaActual = 1;
+    let puntajeJugador = 0;
+    let puntajeComputadora = 0;
+
+    function seleccionarArma(arma) {
+        armaJugadorSeleccionada = arma;
+        console.log(`Has seleccionado: ${arma.nombre}`);
+        jugarRonda();
+    }
+
     function determinarGanador(armaJugador, armaComputadora) {
         if (armaJugador.esGanadoraContra(armaComputadora)) {
-          return "jugador";
+            return "jugador";
         } else if (armaComputadora.esGanadoraContra(armaJugador)) {
-          return "computadora";
+            return "computadora";
         } else {
-          return "empate";
+            return "empate";
         }
     }
-      
-    function jugarRonda(armaJugador) {
+
+    function jugarRonda() {
+        const nombreJugador = document.getElementById('nombreJugador').value;
+        if (!nombreJugador) {
+            alert("Por favor, ingresa tu nombre antes de iniciar la ronda.");
+            return;
+        }
+
+        if (!armaJugadorSeleccionada) {
+            alert("Por favor, selecciona un arma antes de iniciar la ronda.");
+            return;
+        }
+
         const armaComputadora = obtenerArmaAleatoria();
-        console.log(`Jugador eligió: ${armaJugador.nombre}`);
-        console.log(`Computadora eligió: ${armaComputadora.nombre}`);
-        const resultado = determinarGanador(armaJugador, armaComputadora);
-        return resultado;
-    }
-      
-    function jugarJuego() {
-        let puntajeJugador = 0;
-        let puntajeComputadora = 0;
-      
-        for (let ronda = 1; ronda <= 3; ronda++) {
-          console.log(`Ronda ${ronda}`);
-          const armaJugador = obtenerArmaAleatoria();
-          const resultado = jugarRonda(armaJugador);
-      
-          if (resultado === "jugador") {
+        const resultado = determinarGanador(armaJugadorSeleccionada, armaComputadora);
+        const resultadoDiv = document.getElementById('resultado');
+
+        resultadoDiv.innerHTML += `<p><strong>Ronda ${rondaActual}:</strong></p>
+                                    <p>${nombreJugador} eligió: ${armaJugadorSeleccionada.nombre}</p>
+                                    <p>Descripción: ${armaJugadorSeleccionada.descripcion}</p>
+                                    <p>Computadora eligió: ${armaComputadora.nombre}</p>
+                                    <p>Descripción: ${armaComputadora.descripcion}</p>`;
+
+        if (resultado === "jugador") {
             puntajeJugador++;
-            console.log("Jugador gana esta ronda.");
-          } else if (resultado === "computadora") {
+            resultadoDiv.innerHTML += "<p><strong>Resultado: Jugador gana esta ronda.</strong></p>";
+        } else if (resultado === "computadora") {
             puntajeComputadora++;
-            console.log("Computadora gana esta ronda.");
-          } else {
-            console.log("Esta ronda es un empate.");
-          }
-          console.log('---');
-        }
-      
-        console.log(`Resultado Final: Jugador ${puntajeJugador} - ${puntajeComputadora} Computadora`);
-      
-        if (puntajeJugador > puntajeComputadora) {
-          console.log("¡Jugador gana el juego!");
-        } else if (puntajeComputadora > puntajeJugador) {
-          console.log("Computadora gana el juego.");
+            resultadoDiv.innerHTML += "<p><strong>Resultado: Computadora gana esta ronda.</strong></p>";
         } else {
-          console.log("El juego termina en empate.");
+            resultadoDiv.innerHTML += "<p><strong>Resultado: Esta ronda es un empate.</strong></p>";
+        }
+
+        armaJugadorSeleccionada = null;
+        rondaActual++;
+
+        if (rondaActual > 3) {
+            finalizarJuego();
+        } else {
+            alert("Selecciona tu arma para la próxima ronda.");
         }
     }
-      
-    
-    jugarJuego();
-  }
-  
-  console.log('Bienvenido a Gladiator Arena, escoge tus armas. Gladiador te explica cómo funcionan. En esta arena, tenemos para escoger 5 tipos de armas: espadas, hacha, mazo, lanza y daga. Cada arma tiene ventaja y desventaja; en esto te dejo cuáles le ganan a cuáles y con cuáles pierde contra otras.');
-  
-  iniciaArena();
-  
+
+    function finalizarJuego() {
+        const resultadoDiv = document.getElementById('resultado');
+
+        resultadoDiv.innerHTML += `<p><strong>Resultado Final:</strong></p>
+                                    <p>Jugador ${puntajeJugador} - ${puntajeComputadora} Computadora</p>`;
+
+        if (puntajeJugador > puntajeComputadora) {
+            resultadoDiv.innerHTML += "<p><strong>¡Jugador gana el juego!</strong></p>";
+            alert("¡Felicidades! ¡Has ganado el juego!");
+        } else if (puntajeComputadora > puntajeJugador) {
+            resultadoDiv.innerHTML += "<p><strong>Computadora gana el juego.</strong></p>";
+            alert("Lo siento, has perdido. La computadora gana el juego.");
+        } else {
+            resultadoDiv.innerHTML += "<p><strong>El juego termina en empate.</strong></p>";
+            alert("El juego termina en empate.");
+        }
+    }
+
+    window.iniciarJuego = function() {
+        const nombreJugador = document.getElementById('nombreJugador').value;
+        if (!nombreJugador) {
+            alert("Por favor, ingresa tu nombre antes de iniciar el juego.");
+            return;
+        }
+
+        rondaActual = 1;
+        puntajeJugador = 0;
+        puntajeComputadora = 0;
+        document.getElementById('resultado').innerHTML = "";
+
+        alert("El juego ha comenzado. Selecciona un arma para la primera ronda.");
+    }
+
+    // Hacer que `seleccionarArma` esté disponible globalmente
+    window.seleccionarArma = seleccionarArma;
+}
+
+// Inicia la arena al cargar el script
+iniciaArena();

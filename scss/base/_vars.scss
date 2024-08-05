@@ -1,0 +1,26 @@
+$main-color: #da7e3a;
+$dark-color: #000;
+$light-color: white;
+$secondari-color: #cc3300;
+$p-5: 50px;
+
+//maps
+$colores: (
+  primary: rgb(29, 29, 158),
+  danger: rgb(142, 27, 27),
+  warning: rgb(255, 98, 0),
+  dark: black,
+  light: white,
+  success: rgb(13, 112, 13),
+  info: gray,
+  secondary: rgb(167, 9, 167),
+  terciary: rgb(255, 53, 103)
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
