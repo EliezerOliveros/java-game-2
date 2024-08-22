@@ -1,6 +1,6 @@
 function renderizarArmas(armas) {
     let container_cards = document.querySelector('#container');
-    container_cards.innerHTML = ''; // Limpia el contenedor antes de agregar nuevas tarjetas
+    container_cards.innerHTML = ''; 
 
     armas.forEach((arma) => {
         let copia = document.querySelector('#weapon-template').content.cloneNode(true);

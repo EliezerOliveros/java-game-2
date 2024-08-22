@@ -1,0 +1,64 @@
+Conversation with Coderhouse
+Started on August 21, 2024 at 09:06 PM Buenos Aires time -03 (GMT-0300)
+
+---
+
+09:06 PM | Eliezer Oliveros Guevara: Tengo una consulta 😊
+
+09:06 PM | Cody: ¿Por cuál de tus cursos te contactas? 🤔
+
+09:06 PM | Eliezer Oliveros Guevara: JavaScript
+
+09:06 PM | Cody: ¿Con qué tema se relaciona tu consulta? 🤔
+
+09:06 PM | Eliezer Oliveros Guevara: Inconvenientes con Plataforma 🔧
+
+09:07 PM | Cody: ¿Con qué sección de la Plataforma tienes inconvenientes?
+
+09:07 PM | Eliezer Oliveros Guevara: Entregas
+
+09:07 PM | Cody: Si tienes algún desafío bloqueado por haberte excedido en el plazo de entrega, el mismo no se trata de un error, sino de un incumplimiento en el plazo. 
+ ¡No te preocupes! En Coderhouse contemplamos que hay situaciones excepcionales que pueden suceder, tales como problemas de salud o inconvenientes técnicos, entre otros. 
+ En este caso, puedes hablar con nuestro equipo de asesores para que podamos ayudarte.
+
+09:07 PM | Cody: De todas formas, es posible que en algunos casos el error se deba a problemas de Plataforma. En este caso, te recomendamos eliminar el caché y las cookies de tu navegador.
+
+09:07 PM | Eliezer Oliveros Guevara: Ya borré el caché, pero aún tengo inconvenientes
+
+09:07 PM | Cody: A continuación, brindanos una captura de pantalla del inconveniente que tuviste.
+
+09:07 PM | Eliezer Oliveros Guevara: [Image "image.png?expires=1724298300&signature=069143eadd3eb3e1c1d7ae4ba22f0c211e75ad677b55370692a3154ffc17dc32"]
+
+09:07 PM | Cody: ¡No te preocupes! Vamos a derivarte con nuestro equipo de asesores para que puedan asistirte.
+
+09:07 PM | Cody: A continuación, cuéntanos en un mensaje cómo podemos ayudarte 👇
+
+09:08 PM | Eliezer Oliveros Guevara: no puedo entregr el proyecto final e borrado el cache como piden pero sigue sin funcionar
+
+09:08 PM | Cody: ¡Muchas gracias por la información! 
+ Nuestro equipo de asesores especializados se encontrará analizando tu caso para poder ayudarte 🔍 
+ Puedes seguir tu rutina con tranquilidad ☕ 
+ Tan pronto uno de nuestros asesores se encuentre disponible, recibirás una notificación en la burbuja de tu Plataforma con nuestra respuesta 😎
+
+09:08 PM | Cody: Mientras tanto, nos gustaría conocer tu opinión sobre tu experiencia con nuestro Chatbot. Tus comentarios sobre su navegabilidad son muy importantes 🚀
+
+09:08 PM | Cody: [App: Typeform]
+
+09:10 PM | Laura from Coderhouse: Hola Eliezer , soy Lau😊. Gracias por comunicarte con Coderhouse🚀 
+ 
+ Lamento el inconveniente que presentas. Quiero que sepas que elevamos tu caso al área correspondiente y lo solucionarán lo antes posible. Mientras eso ocurre a través del siguiente link podrás habilitar tu entrega para realizarla:
+​ 
+ 👉LINK DE ENTREGA (https://plataforma-beta.coderhouse.com/cursos/71355/javascript?fd=6626994a0dc0ba0019fe969b&ts=1724468399059) 
+ 
+​ 
+ 📢 Recuerda primero iniciar sesión en una PC y luego acceder al enlace enviado. 
+ 
+​ 
+ ⁠⁠📢⁠⁠Es importante que, una vez que realices la entrega, te pongas en contacto con tu tutor para darle aviso. De esta manera podrá brindarte corrección cuanto antes. 
+ 
+Quedo a tu disposición para cualquier cosa que necesites, que tengas una excelente semana.. 🌞 
+ 
+​
+
+---
+Exported from Coderhouse on August 22, 2024 at 12:09 AM Buenos Aires time -03 (GMT-0300)

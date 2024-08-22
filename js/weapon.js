@@ -4,7 +4,7 @@ class Arma {
         this.descripcion = descripcion;
         this.ganaContra = ganaContra;
         this.pierdeContra = pierdeContra;
-        this.img = `./img/${nombre.toLowerCase()}.webp`; // Ruta de la imagen basada en el nombre
+        this.img = `./img/${nombre.toLowerCase()}.webp`; 
     }
 
     esGanadoraContra(otraArma) {
@@ -16,7 +16,7 @@ class Arma {
     }
 }
 
-// Creación de los objetos Arma
+
 const espada = new Arma(
     "Espada",
     "Un arma versátil que le puede ganar fácilmente a las lanzas y dagas, pero contra las hachas y mazas no te irá tan bien.",

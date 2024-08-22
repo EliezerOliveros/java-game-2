@@ -1,4 +1,20 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Romanesco&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgba(233, 146, 15, 0.808);
+}
+
+.navbar a {
+  color: rgb(196, 58, 3);
+  font-size: 25px;
+  flex: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -108,8 +124,8 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Aumenta la separación entre las tarjetas */
-  margin-top: 40px; /* Aumenta la separación superior */
+  gap: 40px;
+  margin-top: 40px;
   width: 100%;
 }
 
@@ -142,44 +158,63 @@ h1 {
 }
 
 #resultado {
-  margin-top: 40px; /* Aumenta la separación superior */
+  margin-top: 40px;
   text-align: left;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.dice {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-  border: 2px solid #000;
-  border-radius: 10px;
+body {
+  font-family: "Romanesco", cursive;
+  background-color: #fdf5e6;
 }
 
-@keyframes roll {
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.roman-title {
+  font-family: "Caesar Dressing", cursive;
+  color: #8b0000;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
 }
-.rolling {
-  animation: roll 1s ease-in-out;
+
+.roman-form {
+  background-color: #fff5e1;
+  border: 2px solid #8b0000;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.roman-form label {
+  font-family: "Romanesco", cursive;
+  font-size: 1.2em;
+  color: #8b0000;
+}
+
+.roman-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #8b0000;
+  background-color: #fdf5e6;
+}
+
+.roman-button {
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.roman-button:hover {
+  background-color: #640000;
 }
 
 /*# sourceMappingURL=style.css.map */
